@@ -2,14 +2,14 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import SideBar from "@/components/SideBar"; // Sidebar component
-import styles from './profile.module.css'; // CSS для сторінки профілю
+import SideBar from "@/components/SideBar";
+import styles from './profile.module.css';
 
 export default function ProfilePage() {
   const [userName, setUserName] = useState<string | null>(null);
   const [favoriteBooks, setFavoriteBooks] = useState<any[]>([]);
   const [booksRead, setBooksRead] = useState<number | undefined>(undefined);
-  const [bookPassion, setBookPassion] = useState<number>(50); // Default passion
+  const [bookPassion, setBookPassion] = useState<number>(50); 
   const [favoriteGenres, setFavoriteGenres] = useState<string[]>([]);
   const [isEditing, setIsEditing] = useState<boolean>(false);
 
@@ -31,7 +31,6 @@ export default function ProfilePage() {
     }
     setFavoriteBooks(storedBooks);
 
-    // Завантаження збережених даних
     const storedBooksRead = localStorage.getItem('booksRead');
     const storedBookPassion = localStorage.getItem('bookPassion');
     const storedGenres = localStorage.getItem('favoriteGenres');
@@ -56,7 +55,6 @@ export default function ProfilePage() {
   };
 
   const handleEditSubmit = () => {
-    // Збереження даних в localStorage
     localStorage.setItem('booksRead', booksRead?.toString() || '0');
     localStorage.setItem('bookPassion', bookPassion.toString());
     localStorage.setItem('favoriteGenres', JSON.stringify(favoriteGenres));
@@ -80,19 +78,19 @@ export default function ProfilePage() {
       <div className={styles.content}>
         {!userName ? (
           <form className={styles.nameForm} onSubmit={handleNameSubmit}>
-            <label htmlFor="name">Введіть ваше ім'я:</label>
-            <input type="text" id="name" name="name" placeholder="Ваше ім'я" required />
-            <button type="submit">Підтвердити</button>
+            <label htmlFor="name">Enter your name:</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+            <button type="submit">Submit</button>
           </form>
         ) : (
           <>
-            <h1 className={styles.profileHeader}>Привіт, {userName}</h1>
+            <h1 className={styles.profileHeader}>Hello, {userName}</h1>
 
             <div className={styles.profileDetails}>
               {isEditing ? (
                 <div className={styles.editSection}>
                   <label>
-                    Прочитав: 
+                    Books Read: 
                     <input
                       type="number"
                       value={booksRead}
@@ -101,7 +99,7 @@ export default function ProfilePage() {
                   </label>
 
                   <label>
-                    Пристрасть до книжок:
+                    Book Passion:
                     <input
                       type="range"
                       min="0"
@@ -112,9 +110,9 @@ export default function ProfilePage() {
                     <span>{bookPassion}%</span>
                   </label>
 
-                  <label>Улюблені жанри:</label>
+                  <label>Favorite Genres:</label>
                   <div className={styles.genreCheckboxes}>
-                    {["Фантастика", "Детектив", "Роман", "Пригоди", "Сучасні", "Комедія", "Поезія", "Документальні", "Драма"].map((genre) => (
+                    {["Fantasy", "Detective", "Romance", "Adventure", "Modern", "Comedy", "Poetry", "Documentary", "Drama"].map((genre) => (
                       <label key={genre}>
                         <input
                           type="checkbox"
@@ -126,15 +124,13 @@ export default function ProfilePage() {
                     ))}
                   </div>
 
-                  <button onClick={handleEditSubmit} className={styles.saveButton}>Зберегти</button>
+                  <button onClick={handleEditSubmit} className={styles.saveButton}>Save</button>
                 </div>
-                
               ) : (
-                
                 <div className={styles.infoSection}>
-                  <p>Прочитав: {booksRead || "undefined"}</p>
-                  <p>Пристрасть до книжок: {bookPassion}%</p>
-                  <p>Улюблені жанри: {favoriteGenres.join(", ") || "Ще не вибрано"}</p>
+                  <p>Books Read: {booksRead || "undefined"}</p>
+                  <p>Book Passion: {bookPassion}%</p>
+                  <p>Favorite Genres: {favoriteGenres.join(", ") || "Not yet selected"}</p>
 
                   <button className={styles.editButton} onClick={() => setIsEditing(true)}>
                     ✏️
@@ -144,15 +140,15 @@ export default function ProfilePage() {
             </div>
 
             <div className={styles.favoriteBooks}>
-              <h2>Улюблені книги:</h2>
+              <h2>Favorite Books:</h2>
               {favoriteBooks.length === 0 ? (
-                <p>Ще не збережено улюблених книг.</p>
+                <p>No favorite books saved yet.</p>
               ) : (
                 <div className={styles.booksGrid}>
                   {favoriteBooks.map((book, index) => (
                     <div key={index} className={styles.bookItem} onClick={() => handleBookClick(book.id)}>
                       <h3>{book.title}</h3>
-                      <p>Автор: {book.author}</p>
+                      <p>Author: {book.author}</p>
                     </div>
                   ))}
                 </div>
