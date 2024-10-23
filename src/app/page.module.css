@@ -5,12 +5,14 @@
 
 .containerStyle{
   display:flex;
-  justifyContent:space-between;
-  alignItems:flex-start;
+  justify-content:space-between;
+  align-content :flex-start;
 }
 .content{
   width:30%;
+  padding-top: 300px;
 }
+
 
 .ulGroupStyle{
   list-style:none;
@@ -21,12 +23,19 @@
 
 .grouper{
   background-color:#f8eadd;
-  margin:0 30px;
-  padding:10px 1px;
+  margin:0 40px;
+  padding:20px 1px;
   border-radius:20px;
-
 }
 
 .title{
   padding-left:40px;
+}
+
+.phone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Courier New', Courier, monospace;
 }

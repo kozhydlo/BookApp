@@ -1,0 +1,33 @@
+/* header.module.css */
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 1rem 1rem 0;
+	color: #fff;
+}
+
+.leftContainer {
+	display: flex;
+	align-items: center;
+}
+
+.bookTitle {
+	margin-right: 2rem;
+	color: #000;
+}
+
+.rightContainer {
+	display: flex;
+	align-items: center;
+}
+
+.avatarLink {
+	margin-right: 1rem;
+}
+
+.avatar {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
