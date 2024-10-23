@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import SideBar from "@/components/SideBar";
-import styles from './profile.module.css';
+import SideBar from "@/components/SideBar"
+import { useRouter } from "next/navigation"
+import { useEffect, useState } from "react"
+import styles from './profile.module.css'
 
 export default function ProfilePage() {
   const [userName, setUserName] = useState<string | null>(null);
@@ -154,6 +154,7 @@ export default function ProfilePage() {
                 </div>
               )}
             </div>
+            
           </>
         )}
       </div>
