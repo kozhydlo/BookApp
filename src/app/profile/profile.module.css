@@ -1,0 +1,180 @@
+/* profile.module.css */
+.profileContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+	
+  min-height: 100vh;
+}
+
+.sidebar {
+  margin-top: 50px; 
+  margin-left: 40px;
+  width: 20%;
+}
+
+.content {
+  flex-basis: 60%;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  border-radius: 15px;
+  justify-content: flex-start; 
+}
+
+.infoSection {
+	font-size: 18px;
+}
+
+.infoSection p {
+  font-size: 18px;
+  color: #555;
+  margin: 10px 0;
+}
+.editButton {
+  background-color: #fff;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.editSection label {
+  display: block;
+  margin: 15px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.editSection input[type="number"],
+.editSection input[type="range"] {
+  display: block;
+  margin-top: 10px;
+  padding: 8px;
+  width: 100%;
+  max-width: 350px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.editSection input[type="range"] {
+  width: 100%;
+  max-width: 350px;
+  margin-bottom: 10px;
+}
+
+.editSection span {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+button.saveButton {
+  background-color: #fff;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.saveButton:hover {
+  background-color: #3f4040;
+	color: white;
+}
+
+
+.profileHeader {
+  font-size: 32px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: left; 
+}
+
+.favoriteBooks {
+  width: 100%;
+  text-align: left;
+}
+
+.favoriteBooks h2 {
+  margin-bottom: 30px;
+  font-size: 24px;
+  color: #555;
+}
+
+.nameForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.nameForm input {
+  padding: 12px;
+  font-size: 18px;
+  width: 100%;
+  max-width: 320px;
+  border-radius: 12px;
+  border: 2px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nameForm input:focus {
+  border-color: #007bff;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+}
+
+.nameForm button {
+  padding: 12px 30px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nameForm button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
+
+.booksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 25px;
+}
+
+.bookItem {
+  background-color: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease;
+}
+
+.bookItem:hover {
+  transform: translateY(-7px);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.bookItem h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.bookItem p {
+  margin-top: 12px;
+  font-size: 16px;
+  color: #777;
+}

@@ -14,7 +14,9 @@ export default function SearchPage() {
   );
 
   const handleBookClick = (id) => {
-    router.push(`/book/${id}`); 
+    console.log("Book ID before navigation:", id);
+    console.log("Clicked book ID:", id);
+    router.push(`/book/${id}`);
   };
 
   return (
