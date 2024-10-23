@@ -13,7 +13,7 @@ export default function SearchPage() {
     book.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const handleBookClick = (id) => {
+  const handleBookClick = (id: number) => {
     console.log("Book ID before navigation:", id);
     console.log("Clicked book ID:", id);
     router.push(`/book/${id}`);
